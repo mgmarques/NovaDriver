@@ -89,7 +89,9 @@ Note: This layer acts as the **foundation for analytics**.
 * Testing and documentation
 
 ![Data lineage graph](dbt/lineage.png)
-[Linke to the dbt html documentation of the project](dbt/reports/index.html)
+<a href="dbt/reports/index.html" target="_blank" rel="noopener noreferrer">
+  Like to the dbt html documentation of the project
+</a>
 
 ---
 ### 5. Visualization Layer – Snowflake Dashboard and Looker Studio
