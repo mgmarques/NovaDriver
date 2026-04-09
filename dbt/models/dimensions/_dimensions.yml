@@ -26,3 +26,8 @@ models:
     columns:
       - name: cidade_id
         tests: [not_null, unique]
+  - name: dim_estados
+    description: "Dimensão de estados"
+    columns:
+      - name: estado_id
+        tests: [not_null, unique]
