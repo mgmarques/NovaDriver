@@ -1,3 +1,9 @@
+# dbt
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+dbt/dbt_modules/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

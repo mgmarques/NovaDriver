@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: stage
+    database: NOVADRIVE
+    schema: STAGE
+    tables:
+      - name: veiculos
+        description: "Veículos disponíveis para venda"
+      - name: estados
+        description: "Estados brasileiros"
+      - name: cidades
+        description: "Cidades brasileiras"
+      - name: concessionarias
+        description: "Concessionárias de veículos"
+      - name: vendedores
+        description: "Vendedores das concessionárias"
+      - name: clientes
+        description: "Clientes compradores"
+      - name: vendas
+        description: "Registros de vendas"

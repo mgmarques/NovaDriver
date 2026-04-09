@@ -1,0 +1,20 @@
+select
+    md5(cast(id_vendas as varchar)) as sk_venda,
+    id_vendas,
+    id_veiculos,
+    id_concessionarias,
+    id_vendedores,
+    id_clientes,
+    valor_venda,
+    data_venda,
+    nome_veiculo,
+    tipo_veiculo,
+    valor_veiculo,
+    nome_cliente,
+    endereco_cliente,
+    nome_vendedor,
+    nome_concessionaria,
+    nome_cidade,
+    nome_estado,
+    sigla_estado
+from {{ ref('int_vendas_completas') }}

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: fct_vendas
+    description: "Fact table - vendas completas com chave surrogada"
+    columns:
+      - name: sk_venda
+        tests: [not_null, unique]
+      - name: id_vendas
+        tests: [not_null, unique]
+      - name: valor_venda
+        tests: [not_null]
+  - name: fct_vendas_inc
+    description: "Fact table incremental - vendas"
+    columns:
+      - name: venda_id
+        tests: [not_null, unique]

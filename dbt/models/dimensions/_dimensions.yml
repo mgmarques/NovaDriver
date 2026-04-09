@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_veiculos
+    description: "Dimensão de veículos"
+    columns:
+      - name: veiculo_id
+        tests: [not_null, unique]
+  - name: dim_clientes
+    description: "Dimensão de clientes"
+    columns:
+      - name: cliente_id
+        tests: [not_null, unique]
+  - name: dim_vendedores
+    description: "Dimensão de vendedores"
+    columns:
+      - name: vendedor_id
+        tests: [not_null, unique]
+  - name: dim_concessionarias
+    description: "Dimensão de concessionárias com localização"
+    columns:
+      - name: concessionaria_id
+        tests: [not_null, unique]
+  - name: dim_cidades
+    description: "Dimensão de cidades"
+    columns:
+      - name: cidade_id
+        tests: [not_null, unique]

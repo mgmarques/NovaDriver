@@ -1,0 +1,24 @@
+name: NovaDrive
+version: '1.0.0'
+config-version: 2
+profile: default
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+models:
+  NovaDrive:
+    staging:
+      +schema: staging
+      +materialized: view
+    intermediate:
+      +schema: intermediate
+      +materialized: view
+    dimensions:
+      +schema: analytics
+      +materialized: table
+    facts:
+      +schema: analytics
+      +materialized: table

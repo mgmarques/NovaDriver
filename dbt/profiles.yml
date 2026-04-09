@@ -1,0 +1,12 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: ""
+      user: ""
+      role: ACCOUNTADMIN
+      database: NOVADRIVE
+      warehouse: COMPUTE_WH
+      schema: ANALYTICS
+      threads: 4

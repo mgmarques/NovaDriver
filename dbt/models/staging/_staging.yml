@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: stg_veiculos
+    columns:
+      - name: id_veiculos
+        tests: [not_null, unique]
+  - name: stg_estados
+    columns:
+      - name: id_estados
+        tests: [not_null, unique]
+  - name: stg_cidades
+    columns:
+      - name: id_cidades
+        tests: [not_null, unique]
+      - name: id_estados
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_estados')
+              field: id_estados
+  - name: stg_concessionarias
+    columns:
+      - name: id_concessionarias
+        tests: [not_null, unique]
+      - name: id_cidades
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_cidades')
+              field: id_cidades
+  - name: stg_vendedores
+    columns:
+      - name: id_vendedores
+        tests: [not_null, unique]
+      - name: id_concessionarias
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_concessionarias')
+              field: id_concessionarias
+  - name: stg_clientes
+    columns:
+      - name: id_clientes
+        tests: [not_null, unique]
+  - name: stg_vendas
+    columns:
+      - name: id_vendas
+        tests: [not_null, unique]
+      - name: id_veiculos
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_veiculos')
+              field: id_veiculos
+      - name: id_clientes
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_clientes')
+              field: id_clientes
