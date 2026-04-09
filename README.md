@@ -7,7 +7,6 @@ To enable data-driven decision-making across operations, sales, and engineering,
 
 ---
 ## Architecture Overview
-
 ### 1. OLTP Layer – PostgreSQL
 * **Technology:** PostgreSQL
 * **Purpose:**
@@ -19,6 +18,8 @@ To enable data-driven decision-making across operations, sales, and engineering,
     * Dealership operations
 
 Note: This is the **source of truth** for real-time business operations.
+
+[Exploratory activities on the source data](PosGres/atividades.md)
 
 ---
 ### 2. Orchestration Layer – Apache Airflow
@@ -35,6 +36,10 @@ Note: This is the **source of truth** for real-time business operations.
 
 Note: Airflow ensures **reliable and automated data ingestion**.
 
+[Step-by-Step Guide to Installing Airflow - Portuguese Brazil](Airflow/airflow.md)
+
+[More robust DAGs.md](Airflow/robust_dags.md)
+
 ---
 ### 3. Data Warehouse – Snowflake (RAW Layer)
 * **Technology:** Snowflake
@@ -49,6 +54,12 @@ Note: Airflow ensures **reliable and automated data ingestion**.
 
 Note: This layer acts as the **foundation for analytics**.
 
+[Finding your credentials - Brazilian Portuguese](Snowflake/EncontrarCredencias.md)
+
+[Create the NovaDrive Data Base and Schemas](Snowflake/CreateNovaDriveDataBaseAndSchemas.sql)
+
+[Snoflake SQL create notes](Snowflake/snoflake_sql_create.md)
+
 ---
 ### 4. Transformation Layer – dbt (Medallion Architecture)
 * **Technology:** dbt (data build tool)
@@ -62,7 +73,6 @@ Note: This layer acts as the **foundation for analytics**.
 * Mirrors source system
 
 #### Silver Layer
-
 * Cleaned and standardized data
 * Business rules applied
 * Data quality improvements
@@ -72,15 +82,17 @@ Note: This layer acts as the **foundation for analytics**.
 * KPIs and metrics
 * Optimized for reporting
 
-**dbt provides**:
+#### dbt
+**Provides**:
 * Data lineage
 * Version control
 * Testing and documentation
 
----
+![Data lineage graph](dbt/lineage.png)
+[Linke to the dbt html documentation of the project](dbt/reports/index.html)
 
-### 5. Visualization Layer – Looker Studio
-* **Technology:** Looker Studio
+---
+### 5. Visualization Layer – Snowflake Dashboard and Looker Studio
 * **Purpose:**
   * Business intelligence and reporting
   * Dashboard creation for stakeholders
@@ -92,6 +104,17 @@ Note: This layer acts as the **foundation for analytics**.
 * Executive reporting
 
 Note: Enables **self-service analytics and decision-making**.
+
+#### Snowflake Dashboards 
+![General Sales Dashboard](dashboards/Snowflake/Dashboard.png)
+---
+![General Sales Dashboard one filter applied](dashboards/Snowflake/Filter.png)
+---
+![General sales dashboard with various filters applied.](dashboards/Snowflake/MultiFilters.png)
+---
+#### Looker Studio Dashboard
+![Sales by Dealerships](dashboards/Looker_Studio/top.png)
+![Sales by Dealerships](dashboards/Looker_Studio/bottom.png)
 
 ---
 ## End-to-End Data Flow
@@ -105,7 +128,7 @@ Snowflake (RAW / Bronze)
         ↓
 dbt (Silver & Gold Transformations)
         ↓
-Looker Studio (Dashboards & BI)
+Looker Studio & Snowfalke Dashboards (Dashboards & BI)
 ```
 
 ---
