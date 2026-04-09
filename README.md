@@ -92,6 +92,10 @@ Note: This layer acts as the **foundation for analytics**.
 <a href="dbt/reports/index.html" target="_blank" rel="noopener noreferrer">
   Like to the dbt html documentation of the project
 </a>
+or if your localhost use the port: 63342
+<a href="http://localhost:63342/NovaDriver/dbt/reports/index.html?_ijt=h2r0jq7a5923chushppfnn835e&_ij_reload=RELOAD_ON_SAVE#!/overview" target="_blank" rel="noopener noreferrer">
+  Open DBT Report
+</a>
 
 ---
 ### 5. Visualization Layer – Snowflake Dashboard and Looker Studio
